@@ -5,9 +5,18 @@ VALUES (1, 'Admin', 'roles.admin'),
 INSERT INTO `users` (`id`, `username`, `password`, `first_name`, `last_name`, `role_id`, `sex`, `created_at`,
                      `updated_at`, `created_by`, `updated_by`)
 VALUES (1, 'admin', '$2a$10$BYvTmmXOu1QbbGIbZB/DEeXTIsGdD/1s7w.dk0tklmrcNS1BPRJ8q', 'Admin', '', 1, 1,
-        '2021-11-23 00:00:00', '2021-11-23 00:00:00', 1, 1),
+        '2021-11-23 00:00:00', '2021-11-23 00:00:00', 1, 1),/*PASSWORD: admin*/
        (2, 'operator', '$2a$10$U9fJx0VGX8kGcAqUD3Lrn.GDCNom/FbjgGBUtCPbXmnl0.UF2K.Ju', 'Operator', '', 2, 1,
-        '2021-11-23 00:00:00', '2021-11-23 00:00:00', 1, 1);
+        '2021-11-23 00:00:00', '2021-11-23 00:00:00', 1, 1),
+       (3, 'deni', '$2a$10$.Hto2dHDYrbvBAYnFM/U7ujAqRhlcwwii9968zDDCWOpTpVpnwqva', 'Denis', 'Georgiev', 2, 1,
+        '2021-11-25 00:00:00', '2021-11-25 00:00:00', 1, 1),/*PASSWORD: 74826549*/
+       (4, 'mitko', '$2a$10$.M5FiUCLqpQu9XfSQLZxPeLpI8GFNO.AB2PrqaqPgze0J5feVOsae', 'Dimitur', 'Petrov', 2, 1,
+        '2021-11-25 00:00:00', '2021-11-25 00:00:00', 1, 1),/*PASSWORD: 64016271*/
+       (5, 'ani007', '$2a$10$QCJD0q6thij2bApuCh2acOBKyW29zz9sZMmLrK8OoAFTdmWWMr29y', 'Ana', 'Ivanova', 2, 2,
+        '2021-11-25 00:00:00', '2021-11-25 00:00:00', 1, 1),/*PASSWORD: 84562717*/
+       (6, 'mari97', '$2a$10$V04KtvY0WzAB1eMBWlvpGeG/Loj7affHeLKAxVVmkUShewy9dkqHu', 'Maria', 'Dimitrova', 2, 2,
+        '2021-11-25 00:00:00', '2021-11-25 00:00:00', 1, 1);/*PASSWORD: 74526172*/
+
 
 INSERT INTO `suppliers` (`id`, `name`)
 VALUES (1, 'Asus'),
@@ -164,3 +173,37 @@ VALUES (1, 1),
        (2, 30),
        (2, 31),
        (2, 32);
+
+INSERT INTO `rooms` (`id`, `name`)
+VALUES (1, 'Meats'),
+       (2, 'Hardware'),
+       (3, 'Beverages'),
+       (4, 'Sweets'),
+       (5, 'Phones'),
+       (6, 'Major Appliances');
+
+INSERT INTO `shelves` (`id`, `name`, `room_id`)
+VALUES (1, 'A1', 1),
+       (2, 'B1', 1),
+       (3, 'A1', 2),
+       (4, 'B1', 2),
+       (5, 'A1', 3),
+       (6, 'B1', 3),
+       (7, 'A1', 4),
+       (8, 'B1', 4),
+       (9, 'A1', 5),
+       (10, 'B1', 5),
+       (11, 'A1', 6),
+       (12, 'B1', 6),
+       (13, 'A2', 1),
+       (14, 'B2', 1),
+       (15, 'A2', 2),
+       (16, 'B2', 2),
+       (17, 'A2', 3),
+       (18, 'B2', 3),
+       (19, 'A2', 4),
+       (20, 'B2', 4),
+       (21, 'A2', 5),
+       (22, 'B2', 5),
+       (23, 'A2', 6),
+       (24, 'B2', 6);
