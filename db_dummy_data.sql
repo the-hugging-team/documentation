@@ -7,7 +7,7 @@ INSERT INTO `users` (`id`, `username`, `password`, `first_name`, `last_name`, `r
 VALUES (1, 'admin', '$2a$10$BYvTmmXOu1QbbGIbZB/DEeXTIsGdD/1s7w.dk0tklmrcNS1BPRJ8q', 'Admin', '', 1, 1,
         '2021-11-23 00:00:00', '2021-11-23 00:00:00', 1, 1),/*PASSWORD: admin*/
        (2, 'operator', '$2a$10$U9fJx0VGX8kGcAqUD3Lrn.GDCNom/FbjgGBUtCPbXmnl0.UF2K.Ju', 'Operator', '', 2, 1,
-        '2021-11-23 00:00:00', '2021-11-23 00:00:00', 1, 1),
+        '2021-11-23 00:00:00', '2021-11-23 00:00:00', 1, 1),/*PASSWORD: operator*/
        (3, 'deni', '$2a$10$.Hto2dHDYrbvBAYnFM/U7ujAqRhlcwwii9968zDDCWOpTpVpnwqva', 'Denis', 'Georgiev', 2, 1,
         '2021-11-25 00:00:00', '2021-11-25 00:00:00', 1, 1),/*PASSWORD: 74826549*/
        (4, 'mitko', '$2a$10$.M5FiUCLqpQu9XfSQLZxPeLpI8GFNO.AB2PrqaqPgze0J5feVOsae', 'Dimitur', 'Petrov', 2, 1,
@@ -17,30 +17,6 @@ VALUES (1, 'admin', '$2a$10$BYvTmmXOu1QbbGIbZB/DEeXTIsGdD/1s7w.dk0tklmrcNS1BPRJ8
        (6, 'mari97', '$2a$10$V04KtvY0WzAB1eMBWlvpGeG/Loj7affHeLKAxVVmkUShewy9dkqHu', 'Maria', 'Dimitrova', 2, 2,
         '2021-11-25 00:00:00', '2021-11-25 00:00:00', 1, 1);/*PASSWORD: 74526172*/
 
-
-INSERT INTO `suppliers` (`id`, `name`)
-VALUES (1, 'Asus'),
-       (2, 'Nvidia'),
-       (3, 'Zaharni Zavodi'),
-       (4, 'Eko mes'),
-       (5, 'Devin'),
-       (6, 'Bankiq'),
-       (7, 'Intel'),
-       (8, 'AMD'),
-       (9, 'Svoge'),
-       (10, 'Milka');
-
-INSERT INTO `clients` (`id`, `name`)
-VALUES (1, 'Apple'),
-       (2, 'Ivan'),
-       (3, 'Google'),
-       (4, 'MyMarket'),
-       (5, 'Lidl'),
-       (6, 'Kaufland'),
-       (7, 'Ardes'),
-       (8, 'Ozone'),
-       (9, 'CBA'),
-       (10, 'TU VARNA');
 
 INSERT INTO `cash_registers` (`id`, `user_id`, `balance`)
 VALUES (1, 2, 1432),
@@ -207,3 +183,9 @@ VALUES (1, 'A1', 1),
        (22, 'B2', 5),
        (23, 'A2', 6),
        (24, 'B2', 6);
+
+INSERT INTO `addresses` (`id`, `address`)
+VALUES (1, 'ul.Studentska 1 9010 Varna');
+
+INSERT INTO `companies` (`id`, `name`, `address_id`, `bulstat`, `dds_number`, `mol`)
+VALUES (1, 'CELLA', 1, '4813573204', 'BG84124589', 'Mihail Georgiev');
