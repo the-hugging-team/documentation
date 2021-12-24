@@ -45,14 +45,20 @@ VALUES (1, 'kg', 'product_quantity_types.kilograms'),
        (3, 'l', 'product_quantity_types.liters'),
        (4, 'pcs.', 'product_quantity_types.pieces');
 
-INSERT INTO `activity_types` (`id`, `name`, `slug`)
-VALUES (1, 'Create user', 'activity_types.cretae_user'),
-       (2, 'Update user', 'activity_types.update_user'),
-       (3, 'Create client', 'activity_types.create_client'),
-       (4, 'Update client', 'activity_types.update_client'),
-       (5, 'Sell stock', 'activity_types.sell_stock'),
-       (6, 'Buy stock', 'activity_types.buy_stock'),
-       (7, 'Create cash register', 'activity_types.create_cash_register');
+INSERT INTO `activity_types` (`name`, `slug`)
+VALUES ('Create user', 'activity_types.cretae_user'),
+       ('Update user', 'activity_types.update_user'),
+       ('Create company', 'activities.companies.create'),
+       ('Edit company', 'activities.companies.edit'),
+       ('Delete company', 'activities.companies.delete'),
+       ('Create cash register', 'activities.cash_registers.create'),
+       ('Delete cash register', 'activities.cash_registers.delete'),
+       ('Make sale', 'activities.sale'),
+       ('Accept delivery', 'activities.delivery'),
+       ('Create storage', 'activities.storage.create'),
+       ('Edit storage', 'activities.storage.edit'),
+       ('Delete storage', 'activities.storage.delete');
+
 
 INSERT INTO `permissions` (`id`, `name`, `slug`)
 VALUES (1, 'Create user', 'permissions.users.create'),
