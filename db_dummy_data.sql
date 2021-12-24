@@ -60,7 +60,7 @@ VALUES ('Create user', 'activity_types.cretae_user'),
        ('Delete storage', 'activities.storage.delete');
 
 
-INSERT INTO `permissions` (`name`, `slug`)
+INSERT INTO `permissions` (`id`, `name`, `slug`)
 VALUES (1, 'Create user', 'permissions.users.create'),
        (2, 'Edit user', 'permissions.users.edit'),
        (3, 'List users', 'permissions.users.index'),
@@ -80,7 +80,7 @@ VALUES (1, 'Create user', 'permissions.users.create'),
        (17, 'Delete rooms', 'permissions.rooms.delete'),
        (18, 'Create shelf', 'permissions.shelves.create'),
        (19, 'Edit shelf', 'permissions.shelves.edit'),
-       (20, 'List shelves', 'perm   admiissions.shelves.index'),
+       (20, 'List shelves', 'permissions.shelves.index'),
        (21, 'Delete shelf', 'permissions.shelves.delete'),
        (22, 'Create product', 'permissions.products.create'),
        (23, 'Edit product', 'permissions.products.edit'),
