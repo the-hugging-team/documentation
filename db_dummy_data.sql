@@ -19,8 +19,8 @@ VALUES (1, 'admin', '$2a$10$BYvTmmXOu1QbbGIbZB/DEeXTIsGdD/1s7w.dk0tklmrcNS1BPRJ8
 
 
 INSERT INTO `cash_registers` (`id`, `user_id`, `balance`)
-VALUES (1, 2, 1432),
-       (2, 2, 3542);
+VALUES (1, null, 100000.00),
+       (2, 2, 3542.00);
 
 
 INSERT INTO `transaction_types` (`id`, `name`, `slug`)
@@ -184,4 +184,7 @@ INSERT INTO `addresses` (`id`, `address`)
 VALUES (1, 'ul.Studentska 1 9010 Varna');
 
 INSERT INTO `companies` (`id`, `name`, `address_id`, `bulstat`, `dds_number`, `mol`)
-VALUES (1, 'CELLA', 1, '4813573204', 'BG84124589', 'Mihail Georgiev');
+VALUES (1, 'CELLA', 1, '1231231231', 'BG123213123', 'Mihail Georgiev');
+
+INSERT INTO `products` (`id`, `name`, `nomenclature`, `product_category_id`, `quantity`, `product_quantity_type_id`, `retail_price`, `wholesale_price`, `delivery_price`, `shelf_id`)
+VALUES (1, 'Core o5-10123K', '123123', 1, 500.00, 4, 399.99, 299.99, 149.99, 1);
