@@ -46,8 +46,8 @@ VALUES (1, 'kg', 'product_quantity_types.kilograms'),
        (4, 'pcs.', 'product_quantity_types.pieces');
 
 INSERT INTO `activity_types` (`name`, `slug`)
-VALUES ('Create user', 'activities.create_user'),
-       ('Update user', 'activities.update_user'),
+VALUES ('Create user', 'activities.users.create'),
+       ('Update user', 'activities.users.edit'),
        ('Create company', 'activities.companies.create'),
        ('Edit company', 'activities.companies.edit'),
        ('Delete company', 'activities.companies.delete'),
