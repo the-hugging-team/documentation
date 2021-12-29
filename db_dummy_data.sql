@@ -46,19 +46,18 @@ VALUES (1, 'kg', 'product_quantity_types.kilograms'),
        (4, 'pcs.', 'product_quantity_types.pieces');
 
 INSERT INTO `activity_types` (`name`, `slug`)
-VALUES ('Create user', 'activities.users.create'),
-       ('Update user', 'activities.users.edit'),
-       ('Create company', 'activities.companies.create'),
-       ('Edit company', 'activities.companies.edit'),
-       ('Delete company', 'activities.companies.delete'),
-       ('Create cash register', 'activities.cash-registers.create'),
-       ('Delete cash register', 'activities.cash-registers.delete'),
-       ('Make sale', 'activities.sale'),
-       ('Make sale', 'activities.delivery'),
-       ('Accept delivery', 'activities.delivery'),
-       ('Create storage', 'activities.storage.create'),
-       ('Edit storage', 'activities.storage.edit'),
-       ('Delete storage', 'activities.storage.delete');
+VALUES ('Create user', 'activity-types.users.create'),
+       ('Update user', 'activity-types.users.edit'),
+       ('Create company', 'activity-types.companies.create'),
+       ('Edit company', 'activity-types.companies.edit'),
+       ('Delete company', 'activity-types.companies.delete'),
+       ('Create cash register', 'activity-types.cash-registers.create'),
+       ('Delete cash register', 'activity-types.cash-registers.delete'),
+       ('Make sale', 'activity-types.sale'),
+       ('Accept delivery', 'activity-types.delivery'),
+       ('Create storage', 'activity-types.storage.create'),
+       ('Edit storage', 'activity-types.storage.edit'),
+       ('Delete storage', 'activity-types.storage.delete');
 
 
 INSERT INTO `permissions` (`id`, `name`, `slug`)
