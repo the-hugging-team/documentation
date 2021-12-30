@@ -188,3 +188,25 @@ VALUES (1, 'CELLA', 1, '1231231231', 'BG123213123', 'Mihail Georgiev');
 
 INSERT INTO `products` (`id`, `name`, `nomenclature`, `product_category_id`, `quantity`, `product_quantity_type_id`, `retail_price`, `wholesale_price`, `delivery_price`, `shelf_id`)
 VALUES (1, 'Core o5-10123K', '123123', 1, 500.00, 4, 399.99, 299.99, 149.99, 1);
+
+INSERT INTO `notification_templates` (`id`,`template`)
+VALUES (1, 'Product {{product_name}} is out of stock!'),
+       (2, 'Product {{product_name}} has reached the minimum amount!'),
+       (3, 'Cash register {{cash_register_id}} is out of money!'),
+       (4, 'Cash register {{cash_register_id}} has reached the minimum amount of money!');
+
+INSERT INTO `notification_types` (`id`, `slug`, `notification_template_id`)
+VALUES (1, 'notification_types.product_out_of_stock', 1),
+       (2, 'notification_types.product_reached_minimum_amount', 2),
+       (3, 'notification_types.cash_register_out_of_money', 3),
+       (4, 'notification_types.cash_register_reached_minimum_amount', 4);
+
+INSERT INTO `role_has_notification_type` (`role_id`, `notification_type_id`)
+VALUES (1, 1),
+       (1, 2),
+       (1, 3),
+       (1, 4),
+       (2, 1),
+       (2, 2),
+       (2, 3),
+       (2, 4);
