@@ -19,8 +19,8 @@ VALUES (1, 'admin', '$2a$10$BYvTmmXOu1QbbGIbZB/DEeXTIsGdD/1s7w.dk0tklmrcNS1BPRJ8
 
 
 INSERT INTO `cash_registers` (`id`, `user_id`, `balance`)
-VALUES (1, 2, 1432),
-       (2, 2, 3542);
+VALUES (1, null, 100000.00),
+       (2, 2, 3542.00);
 
 
 INSERT INTO `transaction_types` (`id`, `name`, `slug`)
@@ -45,44 +45,51 @@ VALUES (1, 'kg', 'product_quantity_types.kilograms'),
        (3, 'l', 'product_quantity_types.liters'),
        (4, 'pcs.', 'product_quantity_types.pieces');
 
-INSERT INTO `activity_types` (`id`, `name`, `slug`)
-VALUES (1, 'Create user', 'activity_types.cretae_user'),
-       (2, 'Update user', 'activity_types.update_user'),
-       (3, 'Create client', 'activity_types.create_client'),
-       (4, 'Update client', 'activity_types.update_client'),
-       (5, 'Sell stock', 'activity_types.sell_stock'),
-       (6, 'Buy stock', 'activity_types.buy_stock'),
-       (7, 'Create cash register', 'activity_types.create_cash_register');
+INSERT INTO `activity_types` (`name`, `slug`)
+VALUES ('Create user', 'activity-types.users.create'),
+       ('Update user', 'activity-types.users.edit'),
+       ('Create company', 'activity-types.companies.create'),
+       ('Edit company', 'activity-types.companies.edit'),
+       ('Delete company', 'activity-types.companies.delete'),
+       ('Create cash register', 'activity-types.cash-registers.create'),
+       ('Delete cash register', 'activity-types.cash-registers.delete'),
+       ('Make sale', 'activity-types.sale'),
+       ('Accept delivery', 'activity-types.delivery'),
+       ('Create storage', 'activity-types.storage.create'),
+       ('Edit storage', 'activity-types.storage.edit'),
+       ('Delete storage', 'activity-types.storage.delete');
+
 
 INSERT INTO `permissions` (`id`, `name`, `slug`)
 VALUES (1, 'Create user', 'permissions.users.create'),
        (2, 'Edit user', 'permissions.users.edit'),
        (3, 'List users', 'permissions.users.index'),
        (4, 'Delete user', 'permissions.users.delete'),
-       (5, 'Create cash register', 'permissions.cash-registers.create'),
-       (6, 'Edit cash register', 'permissions.cash-registers.edit'),
-       (7, 'List cash registers', 'permissions.cash-registers.index'),
-       (8, 'Delete cash register', 'permissions.cash-registers.delete'),
-       (9, 'Create transaction', 'permissions.transaction.create'),
-       (10, 'Edit transaction', 'permissions.transaction.edit'),
-       (11, 'List transactions', 'permissions.transaction.index'),
-       (12, 'Delete transaction', 'permissions.transaction.delete'),
-       (13, 'Create rooms', 'permissions.rooms.create'),
-       (14, 'Edit rooms', 'permissions.rooms.edit'),
-       (15, 'List rooms', 'permissions.rooms.index'),
-       (16, 'Delete rooms', 'permissions.rooms.delete'),
-       (17, 'Create shelf', 'permissions.shelves.create'),
-       (18, 'Edit shelf', 'permissions.shelves.edit'),
-       (19, 'List shelves', 'perm   admiissions.shelves.index'),
-       (20, 'Delete shelf', 'permissions.shelves.delete'),
-       (21, 'Create product', 'permissions.products.create'),
-       (22, 'Edit product', 'permissions.products.edit'),
-       (23, 'List products', 'permissions.products.index'),
-       (24, 'Delete product', 'permissions.products.delete'),
-       (25, 'List companies', 'permissions.companies.index'),
-       (26, 'Create company', 'permissions.companies.create'),
-       (27, 'Edit company', 'permissions.companies.edit'),
-       (28, 'Delete company', 'permissions.companies.delete');
+       (5, 'Show user activity history', 'permissions.users.show-activity-history'),
+       (6, 'Create cash register', 'permissions.cash-registers.create'),
+       (7, 'Edit cash register', 'permissions.cash-registers.edit'),
+       (8, 'List cash registers', 'permissions.cash-registers.index'),
+       (9, 'Delete cash register', 'permissions.cash-registers.delete'),
+       (10, 'Create transaction', 'permissions.transaction.create'),
+       (11, 'Edit transaction', 'permissions.transaction.edit'),
+       (12, 'List transactions', 'permissions.transaction.index'),
+       (13, 'Delete transaction', 'permissions.transaction.delete'),
+       (14, 'Create rooms', 'permissions.rooms.create'),
+       (15, 'Edit rooms', 'permissions.rooms.edit'),
+       (16, 'List rooms', 'permissions.rooms.index'),
+       (17, 'Delete rooms', 'permissions.rooms.delete'),
+       (18, 'Create shelf', 'permissions.shelves.create'),
+       (19, 'Edit shelf', 'permissions.shelves.edit'),
+       (20, 'List shelves', 'permissions.shelves.index'),
+       (21, 'Delete shelf', 'permissions.shelves.delete'),
+       (22, 'Create product', 'permissions.products.create'),
+       (23, 'Edit product', 'permissions.products.edit'),
+       (24, 'List products', 'permissions.products.index'),
+       (25, 'Delete product', 'permissions.products.delete'),
+       (26, 'List companies', 'permissions.companies.index'),
+       (27, 'Create company', 'permissions.companies.create'),
+       (28, 'Edit company', 'permissions.companies.edit'),
+       (29, 'Delete company', 'permissions.companies.delete');
 
 INSERT INTO `role_has_permissions` (`role_id`, `permission_id`)
 VALUES (1, 1),
@@ -113,7 +120,7 @@ VALUES (1, 1),
        (1, 26),
        (1, 27),
        (1, 28),
-       (2, 5),
+       (1, 29),
        (2, 6),
        (2, 7),
        (2, 8),
@@ -136,7 +143,8 @@ VALUES (1, 1),
        (2, 25),
        (2, 26),
        (2, 27),
-       (2, 28);
+       (2, 28),
+       (2, 29);
 
 INSERT INTO `rooms` (`id`, `name`)
 VALUES (1, 'Meats'),
@@ -176,4 +184,29 @@ INSERT INTO `addresses` (`id`, `address`)
 VALUES (1, 'ul.Studentska 1 9010 Varna');
 
 INSERT INTO `companies` (`id`, `name`, `address_id`, `bulstat`, `dds_number`, `mol`)
-VALUES (1, 'CELLA', 1, '4813573204', 'BG84124589', 'Mihail Georgiev');
+VALUES (1, 'CELLA', 1, '1231231231', 'BG123213123', 'Mihail Georgiev');
+
+INSERT INTO `products` (`id`, `name`, `nomenclature`, `product_category_id`, `quantity`, `product_quantity_type_id`, `retail_price`, `wholesale_price`, `delivery_price`, `shelf_id`)
+VALUES (1, 'Core o5-10123K', '123123', 1, 500.00, 4, 399.99, 299.99, 149.99, 1);
+
+INSERT INTO `notification_templates` (`id`,`template`)
+VALUES (1, 'Product {{product_name}} is out of stock!'),
+       (2, 'Product {{product_name}} has reached the minimum amount!'),
+       (3, 'Cash register {{cash_register_id}} is out of money!'),
+       (4, 'Cash register {{cash_register_id}} has reached the minimum amount of money!');
+
+INSERT INTO `notification_types` (`id`, `slug`, `notification_template_id`)
+VALUES (1, 'notification_types.product_out_of_stock', 1),
+       (2, 'notification_types.product_reached_minimum_amount', 2),
+       (3, 'notification_types.cash_register_out_of_money', 3),
+       (4, 'notification_types.cash_register_reached_minimum_amount', 4);
+
+INSERT INTO `role_has_notification_type` (`role_id`, `notification_type_id`)
+VALUES (1, 1),
+       (1, 2),
+       (1, 3),
+       (1, 4),
+       (2, 1),
+       (2, 2),
+       (2, 3),
+       (2, 4);
