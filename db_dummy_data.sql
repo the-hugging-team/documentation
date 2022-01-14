@@ -187,7 +187,8 @@ INSERT INTO `companies` (`id`, `name`, `address_id`, `bulstat`, `dds_number`, `m
 VALUES (1, 'CELLA', 1, '1231231231', 'BG123213123', 'Mihail Georgiev');
 
 INSERT INTO `products` (`id`, `name`, `nomenclature`, `product_category_id`, `quantity`, `product_quantity_type_id`, `retail_price`, `wholesale_price`, `delivery_price`, `shelf_id`)
-VALUES (1, 'Core o5-10123K', '123123', 1, 500.00, 4, 399.99, 299.99, 149.99, 1);
+VALUES (1, 'Core o5-10123K', '00001', 1, 500.00, 4, 399.99, 299.99, 149.99, 2),
+       (2, 'Core o3-11123K', '00002', 1, 500.00, 4, 250.99, 150.99, 129.99, 2);
 
 INSERT INTO `notification_templates` (`id`,`template`)
 VALUES (1, 'Product {{product_name}} is out of stock!'),
